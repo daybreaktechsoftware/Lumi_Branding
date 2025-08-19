@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center animate-slide-up mb-20">
           {/* CTA Button */}
           <a
-            href="#contact"
+            href="#form"
             className="group bg-white hover:bg-[#f3f3f3] text-black px-10 py-4 rounded-full font-semibold text-xl sm:text-2xl md:text-2xl transition-all duration-500 transform hover:scale-105 shadow-2xl flex items-center space-x-3"
           >
             <span>Get Started</span>

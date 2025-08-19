@@ -99,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
                 }}
               ></button>
               <a
-                href="#contact"
+                href="#form"
                 className="block text-center bg-light-green hover:bg-dark-green text-bla px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4"
               >
                 Get Started

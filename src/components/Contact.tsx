@@ -145,7 +145,7 @@ const Contact = () => {
           </div>
 
           {/* Form Embed Panel */}
-          <div className="lg:col-span-3 animate-slide-in-right">
+          <div className="lg:col-span-3 animate-slide-in-right" id="form">
             <div className="w-full h-full shadow-xl rounded-3xl overflow-hidden border border-gray-200">
               <iframe
                 src="https://airtable.com/embed/appIoBoZKZQJC0l2U/pagAna9Q5JTMyTGyH/form"
