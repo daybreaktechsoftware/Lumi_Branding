@@ -38,7 +38,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-beige-1">
+    <section id="about" className="py-20 bg-beige-1">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Image Section */}
@@ -48,8 +48,9 @@ const About = () => {
               <img
                 src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
                 alt="Creative Team"
-                className="relative w-full h-96 object-cover rounded-3xl shadow-2xl"
+                className="relative w-full max-w-full h-64 sm:h-80 md:h-96 object-cover rounded-3xl shadow-2xl"
               />
+
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
                 <Zap className="h-10 w-10 text-light-green" />
               </div>

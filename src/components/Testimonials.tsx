@@ -65,7 +65,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-dark-grey to-dark-green relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-dark-grey to-dark-green relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-dark-grey/50 to-transparent"></div>
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-light-green/10 to-transparent"></div>
 

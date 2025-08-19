@@ -41,10 +41,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
               alt="Lumi Branding"
               className="h-12 w-auto mx-auto object-contain drop-shadow-2xl"
             />
-            <span
-              className="text-2xl font-bold transition-colors duration-300"
-              style={{ color: "#A17938" }}
-            >
+            <span className="text-2xl font-bold text-[#B08D57] duration-300">
               Lumi Branding
             </span>
           </div>
@@ -83,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
         </div>
 
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-b border-gray-00 shadow-lg">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-beige-1 backdrop-blur-md border-b border-gray-00 shadow-lg">
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
                 <a
@@ -103,7 +100,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
               ></button>
               <a
                 href="#contact"
-                className="w-full bg-light-green hover:bg-dark-green text-bla px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4"
+                className="block text-center bg-light-green hover:bg-dark-green text-bla px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4"
               >
                 Get Started
               </a>

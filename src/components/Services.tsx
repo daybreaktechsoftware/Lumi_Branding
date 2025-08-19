@@ -142,7 +142,10 @@ const Catalog = () => {
   });
 
   return (
-    <section id="catalog" className="py-24 bg-gradient-to-br bg-beige-1">
+    <section
+      id="catalog"
+      className="py-0 sm:py-20 bg-gradient-to-br bg-beige-1"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
