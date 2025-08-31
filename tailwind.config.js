@@ -9,6 +9,7 @@ export default {
         "dark-green": "#E3CFC0",
         "text-dark": "#2D2C2A",
         "text-white": "#FFFFFF",
+        "text-gold": "#B08D57",
         "beige-1": "#F3EFE6",
         "beige-2": "#E3CFC0",
         charcoal: "#2D2C2A",
