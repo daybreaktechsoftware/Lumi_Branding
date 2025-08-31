@@ -36,11 +36,6 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-3">
-            <img
-              src="/PHOTO-2025-07-10-19-19-34.jpg"
-              alt="Lumi Branding"
-              className="h-12 w-auto mx-auto object-contain drop-shadow-2xl"
-            />
             <span className="text-2xl font-bold text-[#B08D57] duration-300">
               Lumi Branding
             </span>
