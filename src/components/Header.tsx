@@ -33,23 +33,30 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-3">
-            <span className="text-2xl font-bold text-[#B08D57] duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Branding */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            {/* <img
+              src="/PHOTO-2025-07-10-19-19-34.jpg"
+              alt="Lumi Branding"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain drop-shadow-2xl"
+            /> */}
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#B08D57] duration-300">
               Lumi Branding
             </span>
           </div>
 
-          <nav className="hidden lg:flex items-center space-x-12">
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-12">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
                   isScrolled
-                    ? "text-text-dark hover:text-light-green"
-                    : "text-text-dark hover:text-white"
+                    ? "text-text-gold hover:text-light-green"
+                    : "text-text-gold hover:text-white"
                 }`}
               >
                 {item.name}
@@ -58,6 +65,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
             ))}
           </nav>
 
+          {/* Mobile menu button */}
           <button
             className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
               isScrolled
@@ -74,8 +82,9 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
           </button>
         </div>
 
+        {/* Mobile dropdown */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-beige-1 backdrop-blur-md border-b border-gray-00 shadow-lg">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-beige-1 backdrop-blur-md border-b border-gray-100 shadow-lg">
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
                 <a
@@ -87,12 +96,6 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
                   {item.name}
                 </a>
               ))}
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  onLoginClick?.();
-                }}
-              ></button>
               <a
                 href="#form"
                 className="block text-center bg-light-green hover:bg-dark-green text-bla px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4"
