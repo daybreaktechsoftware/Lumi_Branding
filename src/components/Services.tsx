@@ -259,10 +259,78 @@ const Catalog = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {/* Mobile: Show limited products based on state */}
           {displayedProducts.map((product, index) => (
             <div
               key={product.id}
-              className="group bg-sand rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-beige overflow-hidden animate-slide-up"
+              className="md:hidden group bg-sand rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-beige overflow-hidden animate-slide-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="relative overflow-hidden bg-white">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-64 object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-beige/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <span className="text-sm font-semibold text-gold">
+                    {product.price}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  <product.icon className="h-6 w-6 text-gold mr-3" />
+                  <h3 className="text-xl font-bold text-charcoal">
+                    {product.name}
+                  </h3>
+                </div>
+
+                <p className="text-charcoal/70 text-sm mb-4 leading-relaxed">
+                  {product.description}
+                </p>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-charcoal/70">
+                    <Move className="h-4 w-4 mr-2 text-gold" />
+                    <span>{product.sizes.length} size options</span>
+                  </div>
+                  <div className="flex items-center text-sm text-charcoal/70">
+                    <Palette className="h-4 w-4 mr-2 text-gold" />
+                    <span>{product.colors.length} color options</span>
+                  </div>
+                  <div className="flex items-center text-sm text-charcoal/70">
+                    <Tag className="h-4 w-4 mr-2 text-gold" />
+                    <span>
+                      {product.brandingOptions.length} branding options
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <button
+                    onClick={() => handleOpenQuote(product)}
+                    className="w-full bg-charcoal/10 hover:bg-charcoal/20 text-charcoal py-2 px-6 rounded-xl font-medium transition-all duration-300"
+                  >
+                    Show Full Details
+                  </button>
+                  <a
+                    href="#contact"
+                    className="block w-full bg-gold hover:bg-charcoal text-beige py-3 px-6 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 text-center"
+                  >
+                    Get Custom Quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Desktop/Tablet: Show all products */}
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className="hidden md:block group bg-sand rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-beige overflow-hidden animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden bg-white">
