@@ -8,138 +8,227 @@ import {
   Palette,
   PenTool,
   Ruler,
-  Shirt,
   Tag,
 } from "lucide-react";
 import { useState } from "react";
 
 const products = [
   {
-    id: "notebook",
-    icon: NotebookText,
-    name: "Branded Notebook",
-    image:
-      "https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Professional notebooks with custom branding options",
+    id: "alex-varga-gift-set",
+    icon: Package,
+    name: "Alex Varga Gift Set",
+    image: "/public/Alex Varga Gift Set PDF.jpeg",
+    description:
+      "Water bottle, notebook, pen set and keyholder in a branded gift box.",
     details:
-      "Available in A5 or A4, with custom branding (debossed, printed, or embossed).",
-    sizes: ["A5", "A4"],
-    colors: ["Black", "Navy", "Brown", "White", "Gray"],
-    brandingOptions: ["Debossed", "Printed", "Embossed"],
-    placementOptions: ["Front Cover", "Back Cover", "Bottom Right", "Center"],
-    price: "From R45",
+      "Material: Stainless Steel, Tex-Luxe PU, Metal, Lacquered Aluminium. Capacity and sizes listed below.",
+    sizes: [
+      "Water Bottle - 27cm (h)",
+      "Notebook - 21.2cm (l) x 14.5cm (w) x 1.8cm (h)",
+      "Pen Set - 14.2cm (l)",
+      "Keyholder - 5.7cm (h) x 1.7cm (dia)",
+      "Gift Box - 44cm (l) x 28.5cm (w) x 9.5cm (h)",
+    ],
+    colors: ["Black", "White", "Silver"],
+    brandingOptions: [
+      "Deboss",
+      "Digital Print Drinkware",
+      "Laser Engraving",
+      "Pad Print",
+      "Screen Wrap",
+    ],
+    placementOptions: ["Bottle", "Notebook Cover", "Pen Barrel", "Keyholder"],
+    price: "Quote",
   },
   {
-    id: "hoodie",
-    icon: Shirt,
-    name: "Branded Hoodie",
-    image:
-      "https://images.pexels.com/photos/30095394/pexels-photo-30095394.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Premium quality hoodies with custom logo placement",
-    details:
-      "Available in sizes S–XL. Logo options: print, embroidery. Color selection available.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Black", "Navy", "Gray", "White", "Red", "Green"],
-    brandingOptions: ["Print", "Embroidery"],
-    placementOptions: ["Front", "Back", "Sleeve", "Chest"],
-    price: "From R280",
+    id: "alex-varga-laptop-bag",
+    icon: Package,
+    name: "Alex Varga Laptop Bag",
+    image: "/public/Alex Varga Laptop Bag PDF.png",
+    description: "Luxury PU laptop bag, branded options available.",
+    details: "Material: Luxury PU. Size and capacity listed below.",
+    sizes: ["40cm (l) x 4cm (w) x 29cm (h)"],
+    colors: ["Black", "Brown", "Navy"],
+    brandingOptions: ["Laser Engraving", "Pad Print"],
+    placementOptions: ["Front Flap", "Back Panel"],
+    price: "Quote",
   },
   {
-    id: "mug",
-    icon: Coffee,
-    name: "Branded Coffee Mug",
-    image:
-      "https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Ceramic mugs perfect for office branding",
-    details:
-      "One size. Custom logo placement (front, center, etc). Full color or single color printing.",
-    sizes: ["Standard (330ml)"],
-    colors: ["White", "Black", "Blue", "Red", "Green"],
-    brandingOptions: ["Full Color Print", "Single Color Print"],
-    placementOptions: ["Front", "Back", "Wrap Around", "Handle"],
-    price: "From R65",
-  },
-  {
-    id: "pen",
+    id: "altitude-pen",
     icon: PenTool,
-    name: "Branded Pen",
-    image:
-      "https://images.pexels.com/photos/6001378/pexels-photo-6001378.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Professional writing instruments with custom branding",
-    details:
-      "One size. Smooth finish with screen-printed or laser-engraved logos.",
-    sizes: ["Standard"],
-    colors: ["Black", "Blue", "Silver", "White", "Red"],
-    brandingOptions: ["Screen Print", "Laser Engraving"],
-    placementOptions: ["Barrel", "Clip", "Cap"],
-    price: "From R25",
+    name: "Altitude Pen",
+    image: "/public/Altitude Pen PDF.png",
+    description: "Aluminium & chrome pen with custom branding.",
+    details: "Ink colour: Black or Blue. Setup fees apply.",
+    sizes: ["14.2cm (l)"],
+    colors: ["Silver", "Black", "Chrome"],
+    brandingOptions: ["Laser Engraving", "Pad Print"],
+    placementOptions: ["Barrel", "Clip"],
+    price: "Quote",
   },
   {
-    id: "mousepad",
+    id: "branded-mousepad",
     icon: Ruler,
-    name: "Mousepad / Gamepad",
-    image:
-      "https://images.pexels.com/photos/389818/pexels-photo-389818.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Custom-sized mousepads for office and gaming",
-    details:
-      "Custom size available. Please send preferred dimensions via email. Branding available.",
-    sizes: ["Custom Size (Email Required)"],
-    colors: ["Black", "Blue", "Gray", "White"],
-    brandingOptions: ["Full Color Print", "Single Color Print"],
-    placementOptions: ["Center", "Corner", "Edge", "Full Surface"],
-    price: "From R45",
+    name: "Branded Mousepad",
+    image: "/public/Branded Mouse Pad PDF.png",
+    description: "PU & rubber mousepads in a selection of sizes.",
+    details: "Material: PU & Rubber. Select size when requesting a quote.",
+    sizes: ["Multiple sizes available"],
+    colors: ["Black", "Grey", "Navy"],
+    brandingOptions: ["Deboss", "Laser Engraving", "Screen Print"],
+    placementOptions: ["Center", "Corner", "Full Surface"],
+    price: "Quote",
   },
   {
-    id: "headphones",
-    icon: Headphones,
-    name: "Headphones",
-    image:
-      "https://www.dropbox.com/scl/fi/kibvozes2jo92x2gtupc5/PHOTO-2025-08-14-07-02-07.jpg?rlkey=txu57cyfp0n49txsuv52bwp7o&st=bkrexu5p&raw=1",
-    description: "Branded headphones for corporate gifting",
+    id: "kooshty-kork-glass-kup",
+    icon: Coffee,
+    name: "Kooshty Kork Glass Kup",
+    image: "/public/Glass Cup PDF.png",
+    description: "Glass cup with cork sleeve and silicone grip.",
     details:
-      "Custom size available. Please send preferred dimensions via email. Branding available.",
-    sizes: ["Custom Size (Email Required)"],
-    colors: ["Black", "Blue", "Gray", "White"],
-    brandingOptions: ["Full Color Print", "Single Color Print"],
-    placementOptions: ["Center", "Corner", "Edge", "Full Surface"],
-    price: "From R45",
+      "Material: Glass, Cork & Silicone. Size and capacity listed below.",
+    sizes: ["13.5cm (h)"],
+    colors: ["Clear", "Cork Brown", "Black"],
+    brandingOptions: ["Screen Print"],
+    placementOptions: ["Side", "Wrap Around"],
+    price: "Quote",
+  },
+  {
+    id: "kooshty-stainless-steel-vacuum-mug",
+    icon: Coffee,
+    name: "Kooshty Stainless Steel Vacuum Mug",
+    image: "/public/Kooshty Stainless Steel Vacum Mug PDF.png",
+    description: "Large capacity vacuum mug with multiple branding options.",
+    details:
+      "Material: Food-Grade Stainless Steel, PP & Silicone. Size and capacity listed below. Use & Care: Ensure lid is pressed in and closed when using. The mug is dishwasher safe but not the lid. Not microwave safe.",
+    sizes: ["26cm (h) x 10cm (d)"],
+    colors: ["Silver", "Black", "White"],
+    brandingOptions: ["Laser Engraving", "Pad Print", "Screen Wrap"],
+    placementOptions: ["Body", "Lid"],
+    price: "Quote",
+    capacity: "1.2L",
+  },
+  {
+    id: "noise-cancelling-headphones",
+    icon: Headphones,
+    name: "Noise-Cancelling Bluetooth Headphones",
+    image: "/public/Headphones PDF.png",
+    description: "Over-ear Bluetooth headphones with branded case.",
+    details:
+      "Materials: ABS & PU (headphones), EVA (case). Case and headphone sizes listed below.",
+    sizes: [
+      "Headphones - 17cm (l) x 19cm (w) x 7cm (h)",
+      "Case - 19cm (l) x 17.5cm (w) x 7cm (h)",
+    ],
+    colors: ["Black", "White", "Grey"],
+    brandingOptions: ["Screen Print"],
+    placementOptions: ["Ear Cup", "Headband", "Case"],
+    price: "Quote",
+  },
+  {
+    id: "sturdy-laptop-backpack",
+    icon: Move,
+    name: "Sturdy Laptop Backpack",
+    image: "/public/Laptop Backpack PDF.png",
+    description: "Durable 600D polyester backpack with branding options.",
+    details: "Material: 600D Polyester. Size and capacity listed below.",
+    sizes: ["35cm (w) x 13cm (d) x 42cm (h)"],
+    colors: ["Black", "Navy", "Charcoal"],
+    brandingOptions: ["Silk Screen", "Direct to Film"],
+    placementOptions: ["Front Pocket", "Top Flap"],
+    price: "Quote",
+  },
+  {
+    id: "nanotech-laptop-trolley-backpack",
+    icon: Move,
+    name: "Nanotech Laptop Trolley Backpack",
+    image: "/public/Nano-Tech-Trolley-Backpack-Handle PDF.png",
+    description: "Melange polyester trolley backpack with laptop compartment.",
+    details: "Material: Melange Polyester, PU & Metal. Capacity listed below.",
+    sizes: ["30cm (w) x 16cm (d) x 45cm (h)"],
+    colors: ["Melange Grey", "Black"],
+    brandingOptions: ["Laser Engraving"],
+    placementOptions: ["Front Panel", "Side"],
+    price: "Quote",
+  },
+  {
+    id: "notebook-a4",
+    icon: NotebookText,
+    name: "Notebook A4",
+    image: "/public/Notebook A4 PDF.png",
+    description: "PU notebook in A4 size with branded cover options.",
+    details: "Material: PU. A4. 100 lined pages.",
+    sizes: ["20cm x 27.5cm x 1.8cm"],
+    colors: ["Black", "Brown", "Navy"],
+    brandingOptions: ["Screen Print", "Deboss", "Direct Digital", "CO Laser"],
+    placementOptions: ["Front Cover", "Back Cover"],
+    price: "Quote",
+  },
+  {
+    id: "notebook-a5",
+    icon: NotebookText,
+    name: "Notebook A5",
+    image: "/public/Notebook A5 PDF.png",
+    description:
+      "PU notebook in A5 with 70gsm paper and multiple branding options.",
+    details: "Material: PU & 70gsm Paper. A5. 80 sheets / 160 lined pages.",
+    sizes: ["14.5cm (w) x 21cm (l) x 1.5cm (d)"],
+    colors: ["Black", "Navy", "Gray"],
+    brandingOptions: ["Silk Screen", "Foil", "Deboss", "Full Colour Print"],
+    placementOptions: ["Front Cover", "Spine"],
+    price: "Quote",
+  },
+  {
+    id: "serene-beanbag",
+    icon: Package,
+    name: "Serene Beanbag",
+    image: "/public/Serene Beanbag PDF.png",
+    description: "Large corduroy beanbag for relaxed brand experiences.",
+    details:
+      "Size: Large. Material: Corduroy. Diameter and height listed below.",
+    sizes: ["Diameter: 140cm x 55cm Height"],
+    colors: ["Beige", "Grey", "Navy"],
+    brandingOptions: ["None"],
+    placementOptions: ["None"],
+    price: "Quote",
+  },
+  {
+    id: "stainless-steel-water-bottle",
+    icon: Coffee,
+    name: "Stainless Steel Water Bottle",
+    image: "/public/Stainless Steel Water Bottle PDF.png",
+    description: "Stainless steel bottle with multiple branding options.",
+    details: "Material: Stainless Steel & PP. Size and capacity listed below.",
+    sizes: ["28cm (h)"],
+    colors: ["Silver", "Black", "White"],
+    brandingOptions: [
+      "Digital Print Drinkware",
+      "Laser Engraving",
+      "Pad Print",
+      "Screen Wrap",
+    ],
+    placementOptions: ["Body", "Lid"],
+    price: "Quote",
   },
 ];
-
-interface QuoteFormData {
-  productId: string;
-  productName: string;
-  quantity: string;
-  colors: string[];
-  sizes: string[];
-  brandingType: string;
-  brandingPlacement: string;
-  hasLogo: string;
-  additionalNotes: string;
-  contactName: string;
-  contactEmail: string;
-  company: string;
-}
 
 const Catalog = () => {
   const [selectedProduct, setSelectedProduct] = useState<
     (typeof products)[0] | null
   >(null);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
-  const [formData, setFormData] = useState<QuoteFormData>({
-    productId: "",
-    productName: "",
-    quantity: "",
-    colors: [],
-    sizes: [],
-    brandingType: "",
-    brandingPlacement: "",
-    hasLogo: "",
-    additionalNotes: "",
-    contactName: "",
-    contactEmail: "",
-    company: "",
-  });
+
+  // Open details modal for a product
+  const handleOpenQuote = (product: (typeof products)[0]) => {
+    setSelectedProduct(product);
+    setShowQuoteModal(true);
+  };
+
+  // Close modal
+  const handleCloseQuote = () => {
+    setShowQuoteModal(false);
+    setSelectedProduct(null);
+  };
 
   return (
     <section
@@ -172,11 +261,11 @@ const Catalog = () => {
               className="group bg-sand rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-beige overflow-hidden animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden bg-white">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-64 object-contain group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-beige/90 backdrop-blur-sm px-3 py-1 rounded-full">
                   <span className="text-sm font-semibold text-gold">
@@ -214,12 +303,20 @@ const Catalog = () => {
                   </div>
                 </div>
 
-                <a
-                  href="#contact"
-                  className="w-full bg-gold hover:bg-charcoal text-beige py-3 px-6 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
-                >
-                  Get Custom Quote
-                </a>
+                <div className="space-y-3">
+                  <button
+                    onClick={() => handleOpenQuote(product)}
+                    className="w-full bg-charcoal/10 hover:bg-charcoal/20 text-charcoal py-2 px-6 rounded-xl font-medium transition-all duration-300"
+                  >
+                    Show Full Details
+                  </button>
+                  <a
+                    href="#contact"
+                    className="block w-full bg-gold hover:bg-charcoal text-beige py-3 px-6 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 text-center"
+                  >
+                    Get Custom Quote
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -252,279 +349,153 @@ const Catalog = () => {
         </div>
       </div>
 
-      {/* Quote Modal */}
+      {/* Product Details Modal */}
       {showQuoteModal && selectedProduct && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-beige-1 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-beige-1 border-b border-gray-200 p-6 rounded-t-2xl">
+          <div className="bg-beige-1 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-beige-1 border-b border-gray-200 p-6 rounded-t-2xl z-10">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <selectedProduct.icon className="h-6 w-6 text-light-green mr-3" />
-                  <h3 className="text-2xl font-bold text-text-dark">
-                    Quote Request - {selectedProduct.name}
+                  <selectedProduct.icon className="h-6 w-6 text-gold mr-3" />
+                  <h3 className="text-2xl font-bold text-charcoal">
+                    {selectedProduct.name}
                   </h3>
                 </div>
+                <button
+                  onClick={handleCloseQuote}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
 
-            {/* Contact Information */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-text-dark border-b border-gray-200 pb-2">
-                Contact Information
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.contactName}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        contactName: e.target.value,
-                      }))
-                    }
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-light-green focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.contactEmail}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        contactEmail: e.target.value,
-                      }))
-                    }
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-light-green focus:border-transparent"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      company: e.target.value,
-                    }))
-                  }
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-light-green focus:border-transparent"
-                />
-              </div>
-            </div>
-
-            {/* Product Details */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-text-dark border-b border-gray-200 pb-2">
-                Product Details
-              </h4>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Quantity Needed *
-                </label>
-                <input
-                  type="number"
-                  required
-                  min="1"
-                  value={formData.quantity}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      quantity: e.target.value,
-                    }))
-                  }
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-light-green focus:border-transparent"
-                  placeholder="e.g. 50"
+            <div className="p-6 space-y-6">
+              {/* Product Image */}
+              <div className="relative overflow-hidden rounded-xl bg-white">
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  className="w-full h-80 object-contain"
                 />
               </div>
 
+              {/* Description */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Preferred Colors *
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProduct.colors.map((color) => (
-                    <button
-                      key={color}
-                      type="button"
-                      onClick={() => handleColorToggle(color)}
-                      className={`px-4 py-2 rounded-lg border transition-all ${
-                        formData.colors.includes(color)
-                          ? "bg-light-green text-white border-light-green"
-                          : "bg-beige-1 text-gray-700 border-gray-300 hover:border-light-green"
-                      }`}
-                    >
-                      {color}
-                    </button>
-                  ))}
-                </div>
+                <h4 className="text-lg font-semibold text-charcoal mb-2">
+                  Description
+                </h4>
+                <p className="text-charcoal/70 leading-relaxed">
+                  {selectedProduct.description}
+                </p>
               </div>
 
+              {/* Product Details */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Sizes Required *
-                </label>
+                <h4 className="text-lg font-semibold text-charcoal mb-3">
+                  Product Details
+                </h4>
+                <p className="text-charcoal/70 leading-relaxed mb-4">
+                  {selectedProduct.details}
+                </p>
+              </div>
+
+              {/* Sizes */}
+              <div>
+                <h4 className="text-sm font-semibold text-charcoal mb-2 uppercase tracking-wide">
+                  Available Sizes
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProduct.sizes.map((size) => (
-                    <button
+                    <span
                       key={size}
-                      type="button"
-                      onClick={() => handleSizeToggle(size)}
-                      className={`px-4 py-2 rounded-lg border transition-all ${
-                        formData.sizes.includes(size)
-                          ? "bg-light-green text-white border-light-green"
-                          : "bg-beige-1 text-gray-700 border-gray-300 hover:border-light-green"
-                      }`}
+                      className="px-3 py-1 bg-sand text-charcoal rounded-lg text-sm border border-beige"
                     >
                       {size}
-                    </button>
+                    </span>
                   ))}
                 </div>
               </div>
-            </div>
 
-            {/* Branding Details */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-text-dark border-b border-gray-200 pb-2">
-                Branding Requirements
-              </h4>
-
+              {/* Colors */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Branding Type *
-                </label>
-                <select
-                  required
-                  value={formData.brandingType}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      brandingType: e.target.value,
-                    }))
-                  }
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-light-green focus:border-transparent"
-                >
-                  <option value="">Select branding type</option>
+                <h4 className="text-sm font-semibold text-charcoal mb-2 uppercase tracking-wide">
+                  Available Colors
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProduct.colors.map((color) => (
+                    <span
+                      key={color}
+                      className="px-3 py-1 bg-sand text-charcoal rounded-lg text-sm border border-beige"
+                    >
+                      {color}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Branding Options */}
+              <div>
+                <h4 className="text-sm font-semibold text-charcoal mb-2 uppercase tracking-wide">
+                  Branding Options
+                </h4>
+                <div className="flex flex-wrap gap-2">
                   {selectedProduct.brandingOptions.map((option) => (
-                    <option key={option} value={option}>
+                    <span
+                      key={option}
+                      className="px-3 py-1 bg-sand text-charcoal rounded-lg text-sm border border-beige"
+                    >
                       {option}
-                    </option>
+                    </span>
                   ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Branding Placement *
-                </label>
-                <select
-                  required
-                  value={formData.brandingPlacement}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      brandingPlacement: e.target.value,
-                    }))
-                  }
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-light-green focus:border-transparent"
-                >
-                  <option value="">Select placement</option>
-                  {selectedProduct.placementOptions.map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Do you have a logo/design file? *
-                </label>
-                <div className="space-y-2">
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="hasLogo"
-                      value="yes"
-                      checked={formData.hasLogo === "yes"}
-                      onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          hasLogo: e.target.value,
-                        }))
-                      }
-                      className="mr-2"
-                    />
-                    Yes, I have a logo/design file (will send via email)
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="hasLogo"
-                      value="no"
-                      checked={formData.hasLogo === "no"}
-                      onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          hasLogo: e.target.value,
-                        }))
-                      }
-                      className="mr-2"
-                    />
-                    No, I need design assistance
-                  </label>
                 </div>
               </div>
-            </div>
 
-            {/* Additional Notes */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Additional Notes or Special Requests
-              </label>
-              <textarea
-                value={formData.additionalNotes}
-                onChange={(e) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    additionalNotes: e.target.value,
-                  }))
-                }
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-light-green focus:border-transparent"
-                placeholder="Any special requirements, deadlines, or additional information..."
-              />
-            </div>
+              {/* Placement Options */}
+              <div>
+                <h4 className="text-sm font-semibold text-charcoal mb-2 uppercase tracking-wide">
+                  Branding Placement Options
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProduct.placementOptions.map((placement) => (
+                    <span
+                      key={placement}
+                      className="px-3 py-1 bg-sand text-charcoal rounded-lg text-sm border border-beige"
+                    >
+                      {placement}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-            {/* Submit Button */}
-            <div className="flex gap-4 pt-6 border-t border-gray-200">
-              <button
-                type="button"
-                className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="flex-1 bg-light-green hover:bg-dark-green text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-              >
-                Send Quote Request
-              </button>
+              {/* CTA Buttons */}
+              <div className="flex gap-4 pt-4 border-t border-gray-200">
+                <button
+                  onClick={handleCloseQuote}
+                  className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                >
+                  Close
+                </button>
+                <a
+                  href="#contact"
+                  onClick={handleCloseQuote}
+                  className="flex-1 bg-gold hover:bg-charcoal text-beige px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
+                >
+                  Request Quote
+                </a>
+              </div>
             </div>
           </div>
         </div>
