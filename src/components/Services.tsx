@@ -97,7 +97,7 @@ const products = [
     id: "kooshty-stainless-steel-vacuum-mug",
     icon: Coffee,
     name: "Kooshty Stainless Steel Vacuum Mug",
-    image: "/Kooshty Stainless Steel Vacum Mug PDF.png",
+    image: "/Kooshty Stainless Steel Vacum Mug PDF2.png",
     description: "Large capacity vacuum mug with multiple branding options.",
     details:
       "Material: Food-Grade Stainless Steel, PP & Silicone. Size and capacity listed below. Use & Care: Ensure lid is pressed in and closed when using. The mug is dishwasher safe but not the lid. Not microwave safe.",
@@ -142,7 +142,7 @@ const products = [
     id: "nanotech-laptop-trolley-backpack",
     icon: Move,
     name: "Nanotech Laptop Trolley Backpack",
-    image: "/Nano-Tech-Trolley-Backpack-Handle PDF.png",
+    image: "/Nano-Tech-Trolley-Backpack-Handle PDF2.png",
     description: "Melange polyester trolley backpack with laptop compartment.",
     details: "Material: Melange Polyester, PU & Metal. Capacity listed below.",
     sizes: ["30cm (w) x 16cm (d) x 45cm (h)"],
@@ -217,6 +217,7 @@ const Catalog = () => {
     (typeof products)[0] | null
   >(null);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [showAllProducts, setShowAllProducts] = useState(false);
 
   // Open details modal for a product
   const handleOpenQuote = (product: (typeof products)[0]) => {
@@ -229,6 +230,9 @@ const Catalog = () => {
     setShowQuoteModal(false);
     setSelectedProduct(null);
   };
+
+  // Determine which products to display
+  const displayedProducts = showAllProducts ? products : products.slice(0, 3);
 
   return (
     <section
@@ -255,7 +259,7 @@ const Catalog = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {products.map((product, index) => (
+          {displayedProducts.map((product, index) => (
             <div
               key={product.id}
               className="group bg-sand rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-beige overflow-hidden animate-slide-up"
@@ -320,6 +324,18 @@ const Catalog = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* See More / Show Less Button - Only visible on mobile/tablet */}
+        <div className="flex justify-center mb-12 md:hidden">
+          <button
+            onClick={() => setShowAllProducts(!showAllProducts)}
+            className="bg-gold hover:bg-charcoal text-beige px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+          >
+            {showAllProducts
+              ? "Show Less"
+              : `See All ${products.length} Products`}
+          </button>
         </div>
 
         {/* CTA Section */}
